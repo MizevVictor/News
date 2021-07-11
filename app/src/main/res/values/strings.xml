@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">testapp</string>
+    <string name="retry">Retry</string>
+    <string name="category_bitcoin">Bitcoin</string>
+    <string name="category_altcoin">Altcoin</string>
+    <string name="category_blockchain">Blockchain</string>
+</resources>
