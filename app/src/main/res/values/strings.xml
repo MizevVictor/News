@@ -4,4 +4,6 @@
     <string name="category_bitcoin">Bitcoin</string>
     <string name="category_altcoin">Altcoin</string>
     <string name="category_blockchain">Blockchain</string>
+    <string name="bottom_bar_reader">Reader view</string>
+    <string name="bottom_bar_webview">WebView</string>
 </resources>

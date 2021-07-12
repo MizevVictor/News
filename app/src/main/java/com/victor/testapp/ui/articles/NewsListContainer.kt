@@ -1,4 +1,5 @@
-import androidx.compose.foundation.Text
+package com.victor.testapp.ui.articles
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -6,15 +7,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Surface
-import androidx.compose.material.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
-import com.victor.testapp.R
-import com.victor.testapp.ui.ArticleListUiState
+import com.victor.testapp.ui.ErrorView
 import com.victor.testapp.ui.style.NewsTheme
 
 
@@ -67,29 +64,3 @@ private fun CircularLoader() {
     }
 }
 
-@Composable
-fun ErrorView(
-    errorMessage: String,
-    showRetry: Boolean,
-    retry: () -> Unit
-) {
-    Column(
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(
-            text = errorMessage,
-            style = articleTitleStyle.copy(color = NewsTheme.colors.titleColor)
-        )
-        if (showRetry) {
-            TextButton(onClick = retry) {
-                Text(
-                    text = stringResource(id = R.string.retry),
-                    style = TextStyle(
-                        color = NewsTheme.colors.sourceColor
-                    )
-                )
-            }
-        }
-    }
-}

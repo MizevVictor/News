@@ -1,11 +1,11 @@
 package com.victor.testapp.activity
 
-import NewsAppUI
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.platform.setContent
+import com.victor.testapp.ui.articles.NewsAppUI
 import com.victor.testapp.ui.style.NewsTheme
 import com.victor.testapp.ui.viewmodel.NewsViewModel
 import dagger.hilt.android.AndroidEntryPoint

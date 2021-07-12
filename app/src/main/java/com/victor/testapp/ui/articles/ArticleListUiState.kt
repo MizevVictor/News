@@ -1,4 +1,4 @@
-package com.victor.testapp.ui
+package com.victor.testapp.ui.articles
 
 import com.victor.testapp.data.Result
 import com.victor.testapp.data.response.Article

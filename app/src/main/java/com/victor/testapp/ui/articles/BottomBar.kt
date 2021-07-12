@@ -1,3 +1,5 @@
+package com.victor.testapp.ui.articles
+
 import androidx.compose.foundation.Icon
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.*

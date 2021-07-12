@@ -1,4 +1,6 @@
-
+package com.victor.testapp.ui.articles
+import HeightSpacer
+import WidthSpacer
 import android.content.Intent
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.clickable
@@ -13,9 +15,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ContextAmbient
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.victor.testapp.WebViewActivity
+import com.victor.testapp.activity.EXTRA_URL
+import com.victor.testapp.activity.ReaderActivity
 import com.victor.testapp.data.response.Article
 import com.victor.testapp.ui.style.NewsTheme
+import dateTextStyle
+import titleStyle
 
 
 @Composable
@@ -35,7 +40,7 @@ fun ArticleRow(article: Article, onClick: () -> Unit) {
                 article.title?.let {
                     Text(
                         text = it,
-                        style = articleTitleStyle.copy(color = NewsTheme.colors.titleColor),
+                        style = titleStyle.copy(color = NewsTheme.colors.titleColor),
                         maxLines = 3,
                         overflow = TextOverflow.Ellipsis
                     )
@@ -59,17 +64,15 @@ fun ArticleRow(article: Article, onClick: () -> Unit) {
 @Composable
 fun ArticleList(articles: List<Article>) {
     val context = ContextAmbient.current
-    val isDark = NewsTheme.colors.isDark
     LazyColumnFor(
             items = articles,
             itemContent = { article: Article ->
                 ArticleRow(
                         article = article,
                         onClick = {
-                            val intent = Intent(context, WebViewActivity::class.java)
-                            intent.putExtra(WebViewActivity.EXTRA_URL, article.link.toString())
+                            val intent = Intent(context, ReaderActivity::class.java)
+                            intent.putExtra(EXTRA_URL, article.link.toString())
                             context.startActivity(intent)
-//                            CustomTabUtil.launch(context, article.link.toString(), isDark)
                         }
                 )
             }

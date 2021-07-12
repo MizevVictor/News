@@ -12,7 +12,7 @@ val categoryTitleStyle = TextStyle(
     color = Color.White
 )
 
-val articleTitleStyle = TextStyle(
+val titleStyle = TextStyle(
         fontWeight = FontWeight.Medium,
         fontSize = 16.sp
 )

@@ -1,4 +1,4 @@
-
+package com.victor.testapp.ui.articles
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Scaffold
@@ -8,7 +8,6 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import com.victor.testapp.other.Category
 import com.victor.testapp.other.getTitleResource
-import com.victor.testapp.ui.ArticleListUiState
 import com.victor.testapp.ui.style.NewsTheme
 import com.victor.testapp.ui.viewmodel.NewsViewModel
 
@@ -66,9 +65,7 @@ fun BodyContent(
             color = NewsTheme.colors.primaryColor
     ) {
         Column(modifier = Modifier.fillMaxSize()) {
-            TopAppBar(stringRes, onThemeSwitch = {
-                onThemeSwitch()
-            })
+            TopAppBar(stringRes)
             /* This when statement does not make any sense. Need to figure out better solution.
                the idea was to change uiState based on activeCategory, but when 2 category has different number of articles
                and you switch between pages LazyColumnFor remembers scroll position of previous state which leads to ArrayIndexOutOfBound Exception.

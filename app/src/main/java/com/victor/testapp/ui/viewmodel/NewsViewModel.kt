@@ -1,6 +1,5 @@
 package com.victor.testapp.ui.viewmodel
 
-import com.victor.testapp.ui.ArticleListUiState
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,9 +9,10 @@ import com.victor.testapp.data.Result
 import com.victor.testapp.data.repository.NewsRepository
 import com.victor.testapp.data.response.NewsResponse
 import com.victor.testapp.other.Altcoin
-import com.victor.testapp.other.Category
 import com.victor.testapp.other.Bitcoin
 import com.victor.testapp.other.Blockchain
+import com.victor.testapp.other.Category
+import com.victor.testapp.ui.articles.ArticleListUiState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

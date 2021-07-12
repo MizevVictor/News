@@ -41,8 +41,4 @@ class NewsRepositoryImpl @Inject constructor(
         }
     }
 
-    private fun showRetry(code: String): Boolean = when (code) {
-        "apiKeyDisabled", "apiKeyExhausted", "apiKeyInvalid", "apiKeyMissing" -> false
-        else -> true
-    }
 }
