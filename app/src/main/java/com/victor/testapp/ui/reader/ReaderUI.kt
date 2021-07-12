@@ -120,7 +120,7 @@ private fun WebView(
             }
         },
         modifier = Modifier.fillMaxSize()
-            .then(Modifier.padding(start = 16.dp, end = 16.dp, bottom = 40.dp)),
+            .then(Modifier.padding(start = 4.dp, end = 4.dp, bottom = 50.dp)),
     )
 }
 
