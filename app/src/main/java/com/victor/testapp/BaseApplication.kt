@@ -4,10 +4,6 @@ import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 
-/**
- * Created by Akash on 02/07/20
- */
-
 @Suppress("DEPRECATION")
 open class BaseApplication : Application() {
 

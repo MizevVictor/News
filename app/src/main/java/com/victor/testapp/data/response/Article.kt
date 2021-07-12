@@ -17,13 +17,15 @@ class Article @JvmOverloads constructor(
     @field:Element(name = "link")
     @param:Element(name = "link")
     val link: String? = null,
+
     @field:Element(name = "pubDate")
     @param:Element(name = "pubDate")
     val pubDate: String? = null,
+
     @field:Element(name = "content")
     @param:Element(name = "content")
-    @field:Namespace(reference="http://search.yahoo.com/mrss/", prefix="media")
-    @param:Namespace(reference="http://search.yahoo.com/mrss/", prefix="media")
+    @field:Namespace(reference = "http://search.yahoo.com/mrss/", prefix = "media")
+    @param:Namespace(reference = "http://search.yahoo.com/mrss/", prefix = "media")
     val media: Media? = null,
 
     ) {

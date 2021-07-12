@@ -17,12 +17,6 @@ class Channel  @JvmOverloads constructor(
 
 
     ){
-//    @Element
-//    private val title: String? = null
-//
-//    @Element
-//    private val image: RssImage? = null
-
 
     override fun toString(): String {
         return "Channel [item=$items]"
