@@ -28,9 +28,13 @@ class ReaderViewModel(val url: String) : ViewModel() {
     val html: LiveData<String> = _html
 
     init {
+        getAndCleanHtml()
+    }
 
+    private fun getAndCleanHtml() {
         viewModelScope.launch {
             _uiState.value = uiState.value?.copy(isLoading = true)
+
             val document =
                 withContext(Dispatchers.IO) {
                     Jsoup.connect(url)
@@ -40,7 +44,7 @@ class ReaderViewModel(val url: String) : ViewModel() {
             val cleanedArticle = withContext(Dispatchers.Default) {
                 val article = document.getElementsByClass("post post-page__article").first()
 
-                cleanUpHtml(
+                removeElementsFromHtml(
                     article,
                     "post-meta post__block post__block_post-meta",
                     "post-actions post__block post__block_post-actions",
@@ -50,14 +54,14 @@ class ReaderViewModel(val url: String) : ViewModel() {
                 )
                 article
             }
+
             _html.value = cleanedArticle.toString()
             _uiState.value = uiState.value?.copy(isLoading = false)
         }
 
-
     }
 
-    private fun cleanUpHtml(element: Element?, vararg elementNames: String) =
+    private fun removeElementsFromHtml(element: Element?, vararg elementNames: String) =
         elementNames.forEach { element?.getElementsByClass(it)?.first()?.remove() }
 
     fun performAction(action: Action) {

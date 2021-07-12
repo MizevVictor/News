@@ -1,8 +1,8 @@
 package com.victor.testapp.data.response
 
-import org.simpleframework.xml.Element;
-import org.simpleframework.xml.ElementList
-import org.simpleframework.xml.Root;
+import org.simpleframework.xml.Element
+import org.simpleframework.xml.Namespace
+import org.simpleframework.xml.Root
 
 /**
  * Created by Viktor Mizev on 11.07.2021.
@@ -20,7 +20,11 @@ class Article @JvmOverloads constructor(
     @field:Element(name = "pubDate")
     @param:Element(name = "pubDate")
     val pubDate: String? = null,
-
+    @field:Element(name = "content")
+    @param:Element(name = "content")
+    @field:Namespace(reference="http://search.yahoo.com/mrss/", prefix="media")
+    @param:Namespace(reference="http://search.yahoo.com/mrss/", prefix="media")
+    val media: Media? = null,
 
     ) {
 
